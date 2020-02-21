@@ -1,40 +1,40 @@
 function changeVocals (str) {
   //code di sini
-  //console.log(str);
-  var vokal = 'aAiIuUeEoO';
-  var konsonan = 'bBjJvVfFpP';
-  var tampungWords ='';
+  
+  var vokal = 'aAiIuUeEoO'
+  var konsonan = 'bBjJvVfFpP'
+  var tampungWords =''
 
-  for (var i = 0; i<str.length; i++){
-    var inisial = false;
-    for(var j =0; j<vokal.length; j++){
+  for (var i = 0; i < str.length; i++){
+    var inisial = false
+    for(var j = 0; j < vokal.length; j++){
       if(str[i] === vokal[j]) {
         tampungWords += konsonan[j] ;
-        inisial = true;
+        inisial = true
      }
     } 
      if (inisial === false) {
-        tampungWords += str[i]; 
+        tampungWords += str[i] 
      }
   }
   //console.log(tampungWords);
-  return tampungWords;
+  return tampungWords
 }
 
 function reverseWord (str) {
   //code di sini
   var tampungWords = '';
-  for (var i=str.length-1; i>= 0; i--){
-    tampungWords += str[i];
+  for (var i = str.length-1; i >= 0; i--){
+    tampungWords += str[i]
   }
   //console.log(tampungWords1);
-  return tampungWords;
+  return tampungWords
 }
 
 function setLowerUpperCase (str) {
   //code di sini
   var tampungWords = [];  
-  for (var j=0; j< str.length; j++){
+  for (var j = 0; j< str.length; j++){
     if (str[j] ===  str[j].toLowerCase()) {
     tampungWords.push(str[j].toUpperCase());
   }
@@ -48,14 +48,14 @@ function setLowerUpperCase (str) {
 
 function removeSpaces (str) {
   //code di sini
-  var tampungWords = [];
-  for (var k=0; k< str.length; k++){
+  var tampungWords = []
+  for (var k=0; k < str.length; k++){
     if (str[k] !== ' '){
-      tampungWords.push(str[k]);
+      tampungWords.push(str[k])
     }
   }
   //console.log(tampungWords4);
-  return tampungWords;
+  return tampungWords
 }
 
 function passwordGenerator (name) {
@@ -64,19 +64,19 @@ function passwordGenerator (name) {
     return 'Minimal karakter yang diinputkan adalah 5 karakter';
   }
   
-  var code1 = changeVocals(name);
-  //console.log(code1);
-  var code2 = reverseWord(code1);
-  //console.log(code2);
-  var code3 = setLowerUpperCase(code2);
-  //console.log(code3);
-  var code4 = removeSpaces(code3);
-  //console.log(code4);
-  var hasilCode = '';
-  for (var i=0; i< code4.length; i++){
-    hasilCode += code4[i];
+  var pertama = changeVocals(name);
+  //console.log(pertama);
+  var kedua = reverseWord(pertama);
+  //console.log(kedua);
+  var ketiga = setLowerUpperCase(kedua);
+  //console.log(ketiga);
+  var keempat = removeSpaces(ketiga);
+  //console.log(keempat);
+  var hasilAkhir = '';
+  for (var i = 0; i< keempat.length; i++){
+    hasilAkhir += keempat[i];
   }
-  return hasilCode;
+  return hasilAkhir;
 }
 
 console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
